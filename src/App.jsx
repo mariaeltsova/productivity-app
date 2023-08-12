@@ -1,6 +1,8 @@
 //import "./styles.css";
 import React from 'react'
-import{Routes, Route}from 'react-router-dom'
+import {
+  useRoutes
+} from 'react-router-dom';
 import { TodoApp } from "./todo/TodoApp";
 import { Welcome } from "./welcome/Welcome";
 import { Habits } from "./habits/Habits";
@@ -10,17 +12,17 @@ import { FinanceApp } from './finance/FinanceApp';
 //empty <></> is a fragment
 
 const App = () => {
-  return (
-    <Routes>
+  
+    let element = useRoutes([
      
-      <Route path='/' element={<Welcome />}></Route>
-      <Route path='/todo' element={<TodoApp />}></Route>
-      <Route path='/habits' element={<Habits />}></Route>
-      <Route path='/table' element={<Table />}></Route>
-    <Route path='/finance' element={<FinanceApp />}></Route>
-    <Route path='/finance/new' element={<FinanceApp />}></Route>
-    </Routes>
-  )
+      {path:'/', element:<Welcome />},
+      {path:'/todo', element:<TodoApp />},
+      {path:'/habits', element:<Habits />},
+      {path:'/table', element:<Table />},
+    {path:'/finance', element:<FinanceApp />},
+    {path:'/finance/new', element:<FinanceApp />},
+    ])
+  return element
 }
 
 export default App;
