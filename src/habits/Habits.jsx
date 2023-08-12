@@ -23,6 +23,7 @@ export function Habits() {
     return JSON.parse(localValue);
   });
   useEffect(() => {
+    console.log('useEffect startdate saving', startDate)
     localStorage.setItem("STARTDATE", JSON.stringify(startDate));
   }, [startDate]);
 
@@ -49,9 +50,11 @@ export function Habits() {
       ];
     });
     const date = new Date(startDate);
+    
     const dayDates = Array.from({ length: 21 }, (_, i) => {
-      let newdate = new Date();
+      let newdate = new Date(date);
       newdate.setDate(date.getDate() + i);
+      console.log('creating new habit, newDate', newdate)
       let dayAndMonth = newdate.getDate() + "." + (newdate.getMonth() + 1);
       return dayAndMonth;
     });
