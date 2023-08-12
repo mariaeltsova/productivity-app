@@ -1,0 +1,391 @@
+body {
+  font-family: Inter, sans-serif;
+  padding: 15px;
+  padding-top: 7px;
+}
+
+/* CSS */
+button {
+  align-items: center;
+  background-color: white;
+  border: 3px solid #0d8973;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 10px;
+}
+
+button:after {
+  background-color: #0d8973;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -1px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+button:hover:after {
+  transform: translate(0, 0);
+}
+
+button:active {
+  background-color: white;
+  outline: 0;
+}
+
+button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: 0 40px;
+  }
+}
+.small-btn {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  line-height: 12px;
+  font-size: 16px;
+  height: 24px;
+  font-weight: 600;
+  padding: 0 25px;
+  margin-left: auto;
+}
+
+.small-btn:after {
+  content: "";
+  display: block;
+  height: 20px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -1px;
+  transform: translate(8px, 8px);
+  transition: transform 0.2s ease-out;
+  z-index: -1;
+}
+
+.new-task-text {
+  font: 1.25rem / 1.5 sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-top: 10px;
+  border: 3px solid #000000;
+}
+
+.btn {
+  font: 1.4rem / 1.5 sans-serif;
+  font-weight: 800;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+label {
+  font: 1.25rem / 1.5 sans-serif;
+  font-weight: 700;
+}
+
+.heading {
+  font: 1.75rem / 1.5 sans-serif;
+  font-weight: 800;
+}
+
+.header {
+  margin-top: 70px;
+  margin-bottom: 10px;
+  font: 1.75rem / 1.5 sans-serif;
+  font-weight: 800;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin-right: 10px;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #0d8973;
+  transform-origin: bottom left;
+}
+
+.checkbox-todo::before {
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+li label {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5em;
+}
+
+.main-div {
+  display: flex;
+  /* flex-wrap: wrap;*/
+  width: 100%;
+  padding-top: 0;
+}
+.div-helper {
+  flex: 1;
+  padding: 10px;
+  padding-top: 0;
+  width: 50%;
+}
+
+.div-helper {
+  max-width: 50%;
+  margin-right: 5%;
+}
+
+.motivational-quote {
+  font: 1.75rem / 1.5 sans-serif;
+  font-weight: 600;
+  margin-top: 10%;
+  margin-right: 3%;
+  display: inline-block;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.motivation-word {
+  color: white;
+  background-color: #0d8973;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin: 2px;
+  white-space: nowrap; /* to prevent one word breaking into two lines */
+}
+
+.menu {
+  display: flex;
+  padding: 18px;
+  background-color: #0d8973;
+  border-radius: 3px;
+  height: 18px;
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+.menuItem {
+  margin-right: 24px;
+  text-decoration: none;
+  display: inline-block;
+  width: 7%;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+.navLink:hover {
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column;
+  }
+  .div-helper,
+  .motivational-quote {
+    max-width: 100%;
+  }
+  .menuItem {
+    width: 15%;
+  }
+}
+
+.habit-header {
+  font-size: larger;
+  text-align: left;
+}
+
+.habit-header-date {
+  color: #0d8973;
+  text-align: left;
+}
+
+.habit-name {
+  font-weight: 600;
+  font-size: large;
+  width: 350px;
+  word-break: break-all;
+}
+
+.super-small-btn:after {
+  all: revert;
+}
+
+.super-small-btn {
+  all: revert;
+  background-color: #0d8973;
+  color: #fff;
+  border: 2px solid #0d8973;
+  border-radius: 3px;
+  width: 26px;
+  height: 26px;
+  margin: auto;
+}
+
+.super-small-btn:hover {
+  all: revert;
+  color: #0d8973;
+  background-color: #fff;
+  border: 2px solid #0d8973;
+  border-radius: 3px;
+  width: 26px;
+  height: 26px;
+}
+
+#div-modify-habits {
+  position: absolute;
+  bottom: 0;
+ /* display: flex;*/
+ padding-right: 25%;
+  width: 100%;
+}
+
+tr .habit-line {
+  display: flex;
+ margin-top: 6px;
+ margin-bottom: 6px;
+}
+
+.wishlist-img {
+  height: 50%;
+}
+
+.motivation-and-pictures {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#all-pictures {
+  padding-top: 7rem;
+  height: 30rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+table {
+  overflow: hidden;
+  display: inline-block;
+}
+
+td,
+th {
+  position: relative;
+}
+.checkbox-td {
+  align-self: center;
+}
+
+.checkbox-td:hover::before {
+  background-color: #eee;
+  content: "";
+  height: 100%;
+  left: -5000px;
+  position: absolute;
+  top: 0;
+  width: 10000px;
+  z-index: -2;
+}
+
+th:hover::after,
+.checkbox-td:hover::after {
+  background-color: #eee;
+  content: "";
+  height: 10000px;
+  left: 0;
+  position: absolute;
+  top: -5000px;
+  width: 100%;
+  z-index: -1;
+}
+
+.div-container {
+  padding-left: 10px;
+}
+
+.date-input, .new-habit-text{
+  font-weight: 700;
+  border: 2px solid black;
+  border-radius: 3px;
+  margin: 5px;
+  height: 30px;
+}
+
+
+.new-habit-form {
+  white-space: nowrap;
+  display:inline-block;
+}
+.new-habit-form * {
+  display: inline;
+}
+
+.change-date-form {
+  float: right;
+}
+
+#finance-view-type-select {
+  margin-top: 20px;
+}
