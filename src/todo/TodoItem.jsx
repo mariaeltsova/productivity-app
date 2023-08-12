@@ -1,6 +1,6 @@
 export function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
   
-    return <li>
+    return <>
     <label>
       <input
       className="checkbox-todo"
@@ -16,5 +16,5 @@ export function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
     >
       Delete
     </button>
-  </li>
+    </>
 }
