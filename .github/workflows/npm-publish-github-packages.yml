@@ -7,15 +7,24 @@ on:
   release:
     types: [published]
 
+env:
+ CI: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+          matrix:
+            node-version: [18.x]
+    
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: npm ci
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
       - run: npm test
 
   publish-gpr:
@@ -28,9 +37,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
+      - run: npm install
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
