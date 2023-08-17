@@ -43,6 +43,7 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: ls /home/runner/.npm/_logs/
       - name: Save log file as artifact
         uses: actions/upload-artifact@v2
         with:
