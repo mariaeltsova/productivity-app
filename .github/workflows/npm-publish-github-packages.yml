@@ -48,5 +48,5 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
           
       - name: Save log file as artifact
-        if: always()
+        if: success() || failure()
         uses: actions/upload-artifact@v2
