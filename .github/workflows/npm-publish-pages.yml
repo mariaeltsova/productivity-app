@@ -46,4 +46,4 @@ jobs:
           
       - name: Save log file as artifact
         if: success() || failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/download-artifact@v3
