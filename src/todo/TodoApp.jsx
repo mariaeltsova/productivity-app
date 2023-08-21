@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { NewTodoForm } from "./NewTodoForm";
 import { TodoList } from "./TodoList";
-import { Motivation } from "./Motivation";
+import { ProgressBar } from "./ProgressBar";
 import { Menu } from "../global/Menu";
-import { Pictures } from "./Pictures";
+import { RightSide } from "./RightSide";
 
 export function TodoApp() {
+  
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
     if (localValue == null) return [];
@@ -14,6 +15,16 @@ export function TodoApp() {
   useEffect(() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos));
   }, [todos]); //runs this function every time todos change
+
+
+  const [progress, setProgress] = useState(() => {
+    const localValue = localStorage.getItem("PROGRESSTODO");
+    if (localValue == null) return 0;
+    return JSON.parse(localValue);
+  });
+  useEffect(() => {
+    localStorage.setItem("PROGRESSTODO", JSON.stringify(progress))
+  }, [progress])
 
   function addTodo(title) {
     setTodos((currentTodos) => {
@@ -54,24 +65,34 @@ export function TodoApp() {
     setTodos(items);
   }
 
+  function progressFunc(data) {
+    console.log(data)
+    if (isNaN(data)) {
+      data = 1;
+    }
+    setProgress(data)
+  }
+
   return (
     <>
       <Menu></Menu>
       <div className="main-div">
         <div className="div-helper">
           <NewTodoForm onSubmit={addTodo} />
+          <div className="main-div" id="container-header-progress">
+          
           <h1 className="header">Todo list</h1>
+          <ProgressBar progress={progress}></ProgressBar>
+          </div>
           <TodoList
             todos={todos}
             toggleTodo={toggleTodo}
             deleteTodo={deleteTodo}
             handleOnDragEnd={handleOnDragEnd}
+            progressFunc = {progressFunc}
           />
         </div>
-        <div className="motivation-and-pictures">
-          <Motivation />
-          <Pictures></Pictures>
-        </div>
+        <RightSide></RightSide>
       </div>
     </>
   );
