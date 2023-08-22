@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/productivity-app/static/js/main.8b73c18a.js",
+    "static/media/matchu pikchu.jpg": "/productivity-app/static/media/matchu pikchu.1225a0c599f394a34d27.jpg",
+    "static/media/thailand.jpg": "/productivity-app/static/media/thailand.7d430eec11c30c8091ea.jpg",
+    "static/media/yacht2.jpg": "/productivity-app/static/media/yacht2.977f8be9a13c5de7842f.jpg",
+    "static/media/surfing.jpg": "/productivity-app/static/media/surfing.2387a1897d29d5c576ec.jpg",
+    "index.html": "/productivity-app/index.html",
+    "main.8b73c18a.js.map": "/productivity-app/static/js/main.8b73c18a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8b73c18a.js"
+  ]
+}
