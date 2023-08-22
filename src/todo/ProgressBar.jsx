@@ -1,4 +1,6 @@
-export function ProgressBar({progress}) {
+import PropTypes from 'prop-types';
+
+function ProgressBar({progress}) {
     progress = Math.round(progress * 100)
     console.log(progress)
     return (
@@ -13,3 +15,9 @@ export function ProgressBar({progress}) {
         </div>
     )
 }
+
+ProgressBar.propTypes = {
+    progress: PropTypes.number,
+};
+
+export default ProgressBar;

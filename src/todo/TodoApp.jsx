@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { NewTodoForm } from "./NewTodoForm";
-import { TodoList } from "./TodoList";
-import { ProgressBar } from "./ProgressBar";
+import NewTodoForm from "./NewTodoForm";
+import TodoList from "./TodoList";
+import ProgressBar from "./ProgressBar";
 import { Menu } from "../global/Menu";
 import { RightSide } from "./RightSide";
 
 export function TodoApp() {
-  
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
     if (localValue == null) return [];

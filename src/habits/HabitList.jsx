@@ -1,12 +1,9 @@
-import { HabitLine } from "./HabitLine";
-
+import HabitLine from "./HabitLine";
+import PropTypes from 'prop-types';
 
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-export function HabitList({ habits, startDate, deleteHabit, updateCheckboxes, checkboxes }) {
-  
-
-
+function HabitList({ habits, startDate, deleteHabit, updateCheckboxes, checkboxes }) {
   const date = new Date(startDate);
   const dayEls = Array.from(
     { length: 21 },
@@ -67,3 +64,13 @@ export function HabitList({ habits, startDate, deleteHabit, updateCheckboxes, ch
     </>
   );
 }
+
+HabitList.propTypes = {
+  habits: PropTypes.array, 
+  startDate: PropTypes.instanceOf(Date),
+  deleteHabit: PropTypes.func,
+  updateCheckboxes: PropTypes.func,
+  checkboxes: PropTypes.array,
+}
+
+export default HabitList;

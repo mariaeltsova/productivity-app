@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
+import PropTypes from 'prop-types';
 
-export function ChangeDateForm({ onSubmit }) {
+const ChangeDateForm = (props) => { //Named export
   const [newDate, setNewDate] = useState(""); //
   function handleSubmit(e) {
     e.preventDefault();
     if (newDate === "") return;
-    onSubmit(newDate);
+    props.onSubmit(newDate);
   }
 
   return (
@@ -19,4 +20,12 @@ export function ChangeDateForm({ onSubmit }) {
       <button className="small-btn">Set start date</button>
     </form>
   );
+
 }
+
+
+ChangeDateForm.propTypes = {
+  onSubmit: PropTypes.func
+};
+
+export default ChangeDateForm; 

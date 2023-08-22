@@ -1,7 +1,8 @@
-import { TodoItem } from "./TodoItem";
+import TodoItem from "./TodoItem";
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import PropTypes from 'prop-types';
 
-export function TodoList({todos, toggleTodo, deleteTodo, handleOnDragEnd, progressFunc}) {
+function TodoList({todos, toggleTodo, deleteTodo, handleOnDragEnd, progressFunc}) {
 
 let numChecked = 0;
 todos.map(todo => {
@@ -33,3 +34,13 @@ return <DragDropContext onDragEnd={handleOnDragEnd}>
 </Droppable>
 </DragDropContext>
 }
+
+TodoList.propTypes = {
+  todos: PropTypes.array,
+  toggleTodo: PropTypes.func,
+  deleteTodo: PropTypes.func, 
+  handleOnDragEnd: PropTypes.func,
+  progressFunc: PropTypes.func,
+}
+
+export default TodoList;

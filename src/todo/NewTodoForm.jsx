@@ -1,6 +1,7 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
-export function NewTodoForm({ onSubmit }) {
+function NewTodoForm({ onSubmit }) {
   const [newTask, setNewTask] = useState(""); //
 
   function handleSubmit(e) {
@@ -25,3 +26,9 @@ export function NewTodoForm({ onSubmit }) {
     </form>
   );
 }
+
+NewTodoForm.propTypes = {
+  onSubmit: PropTypes.func,
+}
+
+export default NewTodoForm;

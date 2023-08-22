@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu } from "../global/Menu";
-import { NewHabitForm } from "./NewHabitForm";
-import { HabitList } from "./HabitList";
-import { ChangeDateForm } from "./ChangeDateForm";
+import NewHabitForm from "./NewHabitForm";
+import HabitList from "./HabitList";
+import ChangeDateForm  from "./ChangeDateForm";
 
 export function Habits() {
   console.log('---------checkboxes',localStorage.getItem("CHECKBOXES"))

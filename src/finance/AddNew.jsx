@@ -1,4 +1,4 @@
-import { NewSpendingForm } from "./NewSpendingForm";
+import  NewSpendingForm  from "./NewSpendingForm";
 
 export function AddNew() {
     return (

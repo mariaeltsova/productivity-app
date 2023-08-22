@@ -1,15 +1,15 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
-export function NewSpendingForm({ onSubmit }) {
+const NewSpendingForm = (props) => {
   const [title, setTitle] = useState(""); //
   const [date, setDate] = useState(""); //
-  const [amount, setAmount] = useState(0);
+  const [amount] = useState(0);
 
   function handleSubmit(e) {
     e.preventDefault();
     if (date === "" || title === "") return 
-    onSubmit(date, title);
-
+    props.onSubmit(date, title);
    }
 
   return (
@@ -34,3 +34,9 @@ export function NewSpendingForm({ onSubmit }) {
     </form>
   );
 }
+
+NewSpendingForm.propTypes = {
+  onSubmit: PropTypes.func
+};
+
+export default NewSpendingForm;

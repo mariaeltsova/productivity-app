@@ -1,4 +1,6 @@
-export function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
+import PropTypes from 'prop-types';
+
+function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
     return <>
     <label>
       <input
@@ -17,3 +19,13 @@ export function TodoItem({completed, id, title, toggleTodo, deleteTodo}) {
     </button>
     </>
 }
+
+TodoItem.propTypes = {
+  completed: PropTypes.bool,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  toggleTodo: PropTypes.func,
+  deleteTodo: PropTypes.func,
+}
+
+export default TodoItem;

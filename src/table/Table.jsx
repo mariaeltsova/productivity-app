@@ -1,4 +1,3 @@
-import React from 'react'
 import fakedata from "./MOCK_DATA.json";
 import { useTable } from "react-table";
 import { useMemo } from 'react'
@@ -41,9 +40,9 @@ export function Table() {
         <table {...getTableProps()}>
             <thead>
 {headerGroups.map((headerGroup) => (
-    <tr {...headerGroup.getHeaderGroupProps()}>
+    <tr key={headerGroup} {...headerGroup.getHeaderGroupProps()}>
 {headerGroup.headers.map((column) => (
-    <th {...column.getHeaderProps()}>
+    <th key={column} {...column.getHeaderProps()}>
 {column.render("Header")}
     </th>
 ))}
@@ -54,9 +53,9 @@ export function Table() {
     {rows.map((row) => {
         prepareRow(row)
         return (
-            <tr {...row.getRowProps()}>
+            <tr key={row} {...row.getRowProps()}>
 {row.cells.map((cell) => (
-  <td {...cell.getCellProps()}>{cell.render("Cell")}</td> 
+  <td key={cell} {...cell.getCellProps()}>{cell.render("Cell")}</td> 
 ))}
 <td><input type='checkbox'></input></td>
             </tr>

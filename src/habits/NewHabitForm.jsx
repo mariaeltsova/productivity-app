@@ -1,12 +1,13 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
-export function NewHabitForm({ onSubmit }) {
+const NewHabitForm = ( props) => {
   const [newHabit, setNewHabit] = useState(""); //
     
   function handleSubmit(e) {
     e.preventDefault();
     if (newHabit === "") return
-    onSubmit(newHabit);
+    props.onSubmit(newHabit);
     setNewHabit("");
   }
 
@@ -26,3 +27,9 @@ export function NewHabitForm({ onSubmit }) {
     </form>
   );
 }
+
+NewHabitForm.propTypes = {
+  onSubmit: PropTypes.func
+};
+
+export default NewHabitForm;

@@ -1,7 +1,7 @@
 import { Pictures } from "./Pictures";
 import { Motivation } from "./Motivation";
 
-export function RightSide({progress}) {
+export function RightSide() {
 
     return (
         <div className="motivation-and-pictures">
