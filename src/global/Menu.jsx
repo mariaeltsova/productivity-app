@@ -13,10 +13,10 @@ const data = [
     title: "Habits",
     link: "/habits/",
   },
-  {
+ /* {
     title: "Login",
     link: "/login/",
-  },
+  },*/
   {
     title: "Finance",
     link: "/finance/",
