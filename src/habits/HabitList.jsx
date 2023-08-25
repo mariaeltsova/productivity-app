@@ -67,7 +67,7 @@ function HabitList({ habits, startDate, deleteHabit, updateCheckboxes, checkboxe
 
 HabitList.propTypes = {
   habits: PropTypes.array, 
-  startDate: PropTypes.instanceOf(Date),
+  startDate: PropTypes.string,
   deleteHabit: PropTypes.func,
   updateCheckboxes: PropTypes.func,
   checkboxes: PropTypes.array,
