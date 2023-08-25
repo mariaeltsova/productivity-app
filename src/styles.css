@@ -72,7 +72,6 @@ button:hover {
   height: 24px;
   font-weight: 600;
   padding: 0 25px;
-  margin-left: auto;
 }
 
 .small-btn:after {
@@ -118,7 +117,7 @@ label {
 }
 
 .header {
-  margin-top: 70px;
+  margin-top: 10px;
   margin-bottom: 10px;
   font: 1.75rem / 1.5 sans-serif;
   font-weight: 800;
@@ -295,15 +294,15 @@ li label {
 #div-modify-habits {
   position: absolute;
   bottom: 0;
- /* display: flex;*/
- padding-right: 25%;
+  /* display: flex;*/
+  padding-right: 25%;
   width: 100%;
 }
 
 tr .habit-line {
   display: flex;
- margin-top: 6px;
- margin-bottom: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .wishlist-img {
@@ -365,7 +364,8 @@ th:hover::after,
   padding-left: 10px;
 }
 
-.date-input, .new-habit-text{
+.date-input,
+.new-habit-text {
   font-weight: 700;
   border: 2px solid black;
   border-radius: 3px;
@@ -373,10 +373,9 @@ th:hover::after,
   height: 30px;
 }
 
-
 .new-habit-form {
   white-space: nowrap;
-  display:inline-block;
+  display: inline-block;
 }
 .new-habit-form * {
   display: inline;
@@ -388,4 +387,51 @@ th:hover::after,
 
 #finance-view-type-select {
   margin-top: 20px;
+}
+
+.container-progress-bar {
+  width: 200px;
+  display: flex;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #000000;
+  flex: 1;
+}
+
+.container-progress-bar
+  .progress-bar
+  .progress-bar-fill
+  .container-wrapper-progress-bar
+  .progress-label {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container-wrapper-progress-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  background-color: #0d8973;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-label {
+  flex: 2;
+  justify-content: right;
+  margin-left: 14px;
+  font-weight: 700;
+}
+
+#container-header-progress {
+  margin-top: 40px;
 }
