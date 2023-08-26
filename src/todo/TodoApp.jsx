@@ -78,8 +78,10 @@ export function TodoApp() {
 
   return (
     <>
+
       <Menu setMainDivVisibility={setMainDivVisibility}></Menu>
       <div className={`main-div ${mainDivVisible ? '' : 'inactive'}`}>
+
         <div className="div-helper">
           <NewTodoForm onSubmit={addTodo} />
           <div className="main-div" id="container-header-progress">
@@ -88,6 +90,7 @@ export function TodoApp() {
           <ProgressBar className='progressBarEl' progress={progress}></ProgressBar>
           </div>
           <div className="todo-list-div">
+
           <TodoList
             todos={todos}
             toggleTodo={toggleTodo}
