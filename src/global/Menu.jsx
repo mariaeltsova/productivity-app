@@ -44,12 +44,7 @@ export function Menu({setMainDivVisibility}) {
     <div className="App">
       <header className="App-header">
         <nav className={`${styles.navbar}`}>
-
-
-          {/* logo */}
-          <a href='/' className={`${styles.logo}`}>Maria. </a>
-
-
+          <NavLink to="/" className={`${styles.logo}`}>Maria.</NavLink>
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
           {navs.map((nav, index) => (
       <li className="menuItem" key={index} onClick={removeActive}>
