@@ -26,6 +26,9 @@ export function TodoApp() {
     localStorage.setItem("PROGRESSTODO", JSON.stringify(progress))
   }, [progress])
 
+
+  const [mainDivVisible, setMainDivVisibility] = useState(true);
+
   function addTodo(title) {
     setTodos((currentTodos) => {
       return [
@@ -75,15 +78,16 @@ export function TodoApp() {
 
   return (
     <>
-      <Menu></Menu>
-      <div className="main-div">
+      <Menu setMainDivVisibility={setMainDivVisibility}></Menu>
+      <div className={`main-div ${mainDivVisible ? '' : 'inactive'}`}>
         <div className="div-helper">
           <NewTodoForm onSubmit={addTodo} />
           <div className="main-div" id="container-header-progress">
           
           <h1 className="header">Todo list</h1>
-          <ProgressBar progress={progress}></ProgressBar>
+          <ProgressBar className='progressBarEl' progress={progress}></ProgressBar>
           </div>
+          <div className="todo-list-div">
           <TodoList
             todos={todos}
             toggleTodo={toggleTodo}
@@ -91,6 +95,7 @@ export function TodoApp() {
             handleOnDragEnd={handleOnDragEnd}
             progressFunc = {progressFunc}
           />
+          </div>
         </div>
         <RightSide></RightSide>
       </div>

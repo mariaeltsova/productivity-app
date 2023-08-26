@@ -1,7 +1,5 @@
 body {
   font-family: Inter, sans-serif;
-  padding: 15px;
-  padding-top: 7px;
 }
 
 /* CSS */
@@ -123,6 +121,7 @@ label {
   font-weight: 800;
 }
 
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -174,19 +173,23 @@ li label {
 
 .main-div {
   display: flex;
+  position: relative;
   /* flex-wrap: wrap;*/
   width: 100%;
   padding-top: 0;
+  transform: translateY(0%);
+  transition: 0.7s ease-in-out;
+}
+
+.inactive {
+ /* left: -100%;*/
+  transform: translateX(150%);
+  
 }
 .div-helper {
   flex: 1;
   padding: 10px;
   padding-top: 0;
-  width: 50%;
-}
-
-.div-helper {
-  max-width: 50%;
   margin-right: 5%;
 }
 
@@ -219,13 +222,6 @@ li label {
   padding-bottom: 30px;
 }
 
-.menuItem {
-  margin-right: 24px;
-  text-decoration: none;
-  display: inline-block;
-  width: 7%;
-}
-
 .navLink {
   text-decoration: none;
   color: #fff;
@@ -234,19 +230,6 @@ li label {
 
 .navLink:hover {
   font-weight: 900;
-}
-
-@media (max-width: 768px) {
-  .main-div {
-    flex-direction: column;
-  }
-  .div-helper,
-  .motivational-quote {
-    max-width: 100%;
-  }
-  .menuItem {
-    width: 15%;
-  }
 }
 
 .habit-header {
@@ -426,6 +409,7 @@ th:hover::after,
 }
 
 .progress-label {
+  display:inline;
   flex: 2;
   justify-content: right;
   margin-left: 14px;
@@ -434,4 +418,33 @@ th:hover::after,
 
 #container-header-progress {
   margin-top: 40px;
+  width: 100%;
+  display: flex;
+}
+
+
+
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column;
+  }
+  .div-helper,
+  .motivational-quote {
+    width: 100%;
+  }
+
+  .container-wrapper-progress-bar {
+    margin-left: 0;
+  }
+
+  .motivation-and-pictures {
+    width: 100%;
+  }
+
+  #container-header-progress {
+    margin-bottom: 10%;
+  }
+}
+.todo-list-div {
+  width: 100%;
 }
