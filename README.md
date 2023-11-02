@@ -3,4 +3,4 @@ It started just with me learning React by making a simple todo-list, but now I a
 
 I am also planning to add some progress tracking for motivation to both todo-list and habit tracker.
 
-Now I am trying to build a CI-CD pipeline to have it deployed to GH pages.
+The project is still in progress, but you can have a peak at https://mariaeltsova.github.io/productivity-app/
